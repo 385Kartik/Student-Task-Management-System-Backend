@@ -10,10 +10,10 @@ const app = express()
 const PORT = process.env.PORT || 3001
 
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:5173',
-  credentials: true,
-}))
-
+  origin: ['https://your-frontend.vercel.app', 'http://localhost:5173'], // Vercel link zaroori hai
+  credentials: true
+}));
+// https://student-task-management-system-two.vercel.app/
 // JSON aur urlencoded — multer se pehle
 app.use(express.json({ limit: '10mb' }))
 app.use(express.urlencoded({ extended: true, limit: '10mb' }))
